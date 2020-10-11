@@ -242,6 +242,13 @@ struct bu64243_device {
 #define V4L2_CID_BIN_FACTOR_HORZ	   (V4L2_CID_CAMERA_LASTP1 + 15)
 #define V4L2_CID_BIN_FACTOR_VERT	   (V4L2_CID_CAMERA_LASTP1 + 16)
 
+/* link freq and pixel rate required for IPU3 */
+#define OV8865_LINK_FREQ_19MHZ 19200000
+#define OV8865_PIXEL_RATE ((OV8865_LINK_FREQ_19MHZ * 2 * 2) / 10)
+static const s64 link_freq_menu_items[] = {
+	OV8865_LINK_FREQ_19MHZ
+};
+
 #define	v4l2_format_capture_type_entry(_width, _height, \
 		_pixelformat, _bytesperline, _colorspace) \
 	{\
